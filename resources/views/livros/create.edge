@@ -1,0 +1,45 @@
+@layout('layouts/main')
+@set('title', 'Livros')
+
+@section('body')
+
+    <div class="livro-title">
+        <h1>Cadastro de Livro</h1>
+    </div>
+
+    <form action="/livros" method="POST" enctype="multipart/form-data">
+        <div class="container card" style="width: 600px;" id="formcreate">
+            <div class="form-group">
+                <label for="titulo">Titulo do Livro</label>
+                <input type="text" class="form-control" id="inputTitulo" name="titulo" placeholder="Harry Potter" required>
+                <label for="genero">Gênero</label>
+                <input type="text" class="form-control" id="inputGenero" name="genero" placeholder="Fantasia" required>
+                <label for="autor">Autor</label>
+                <input type="text" class="form-control" id="inputAutor" name="autor" placeholder="J.K. Rowling" required>
+                <label for="anoMes">Mês e Ano de publicação</label>
+                <input type="month" class="form-control" id="inputAnoMes" name="anoMes" required>
+                <label for="classficacao">Classificação indicativa</label>
+                <input type="number" class="form-control" id="inputClassficacao" name="classficacao" required>
+            </div>
+    
+            <div class="form-group">
+                <label for="resumo">Resumo</label>
+                <textarea type="obs" class="form-control" id="inputResumo" name="resumo" rows="5" cols="30" placeholder="Coloque o resumo do livro." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image" class="form-label">Insira uma imagem do livro</label>
+                <input class="form-control" type="file" id="image" name="image">
+            </div>
+
+            <div class="button">
+                <input type="submit" class="btn btn-success" value="Cadastrar"> 
+                
+                <a href="/" id="voltar">
+                    <button type="button" class="btn btn-warning">
+                        Voltar
+                    </button>
+                </a>
+            </div>
+        </div>
+    </form>
+@end
