@@ -12,6 +12,8 @@ export default class Livros extends BaseSchema {
       table.date('anoMes')
       table.integer('classficacao')
       table.text('resumo', 'longtext')
+
+      table.timestamps()
     })
   }
 
