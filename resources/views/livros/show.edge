@@ -1,0 +1,30 @@
+@layout('layouts/main')
+@set('title', 'Livros')
+
+@section('body')
+
+    <div class="container">
+        <div class="card livroshow">
+            <img src="https://ogimg.infoglobo.com.br/in/24440303-24f-31c/FT1086A/87996533_SCAtor-Daniel-Redcliff-como-Harry-Potter.-Foto-Divulgacao.jpg" class="card-img-top">
+            <div class="card-header bg-dark">
+                <p> ID: {{ livro.id }} </p>
+                <p> Título: {{ livro.titulo }} </p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-dark">Genero: {{ livro.genero }}</li>
+                <li class="list-group-item bg-dark">Autor: {{ livro.autor }}</li>
+                <li class="list-group-item bg-dark">Data de publicação: {{ livro.ano }}</li>
+                <li class="list-group-item bg-dark">Classificação indicativa: {{ livro.classficacao }}</li>
+                <li class="list-group-item bg-dark">Resenha: {{ livro.resumo }}</li>
+                <li class="list-group-item bg-dark">
+                    <form action="/rota/{{ livro.id }}" method="POST">
+                        <input type="submit" class="btn btn-warning" value="Atualizar">
+                    </form>
+
+                    <form action="/livros/delete/{{ livro.id }}" method="POST">
+                        <input type="submit" class="btn btn-danger" value="Deletar">
+                    </form>
+                </li>
+        </div>
+    </div>
+@end

@@ -2,20 +2,23 @@
 @set('title', 'Livros')
 
 @section('body')
-
-    <div class="container">
-        <div class="card" style="width: 18rem;">
-            <img src="https://ogimg.infoglobo.com.br/in/24440303-24f-31c/FT1086A/87996533_SCAtor-Daniel-Redcliff-como-Harry-Potter.-Foto-Divulgacao.jpg" class="card-img-top">
-            <div class="card-body">
-                <h5 class="card-title">Harry Potter</h5>
-                <p class="card-text">Esse livro conta a história de Harry Potter, um órfão que descobre que é bruxo.</p>
+    @each(livro in livros)
+        <div class="container">
+            <div class="card livros" style="width: 18rem;">
+                <img src="{{ livro.image }}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Título: {{ livro.titulo }}</h5>
+                    <p>Livro: {{ livro.id }} </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <form action="/livros/show/{{ livro.id }}" method="POST">
+                            <input type="submit" class="btn btn-success" value="SABER MAIS">
+                        </form>
+                    </li>
+                </ul>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <button type="button" class="btn btn-success">SABER MAIS</button>
-                </li>
-            </ul>
         </div>
-    </div>
+    @end
 
 @end

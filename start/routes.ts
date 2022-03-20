@@ -27,3 +27,7 @@ Route.get('/livros/create', async ({ view }) => {
 })
 
 Route.post('/livros', 'LivrosController.store')
+
+Route.post('/livros/show/:id', 'LivrosController.show')
+
+Route.post('/livros/delete/:id', 'LivrosController.destroy')
