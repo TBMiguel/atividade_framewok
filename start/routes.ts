@@ -30,4 +30,8 @@ Route.post('/livros', 'LivrosController.store')
 
 Route.post('/livros/show/:id', 'LivrosController.show')
 
+Route.post('/livros/update/:id', 'LivrosController.updateForm')
+
+Route.post('/livros/update/action/:id', 'LivrosController.update')
+
 Route.post('/livros/delete/:id', 'LivrosController.destroy')

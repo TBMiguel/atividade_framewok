@@ -10,4 +10,26 @@ export default class Livro extends BaseModel {
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
+
+  @column()
+  public titulo: string
+
+  @column()
+  public genero: string
+
+  @column()
+  public autor: string
+
+  @column()
+  public ano: Date
+
+  @column()
+  public classficacao: number
+
+  @column()
+  public resumo: string
+
+  @column()
+  public image: string
+  
 }
